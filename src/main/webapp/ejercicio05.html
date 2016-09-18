@@ -9,6 +9,12 @@ and open the template in the editor.
         <title>ejercicio05</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function enviarDatos(destino){
+                document.formulario2.action=destino;
+                document.formulario2.submit();
+            }
+        </script>
     </head>
     <body bgcolor="#8A0808">
         <form name="formuloario2" action="mailto:telepizza@gmail.com" method="POST" enctype="text/plain">
@@ -60,11 +66,12 @@ and open the template in the editor.
                         <td colspan="3" align="center">
                             <input type="submit" value="Enviar Pedido" name="enviar" />&nbsp;&nbsp;
                             <input type="reset" value="Borrar Formulario" name="borrar" />&nbsp;&nbsp;
-                            <input type="button" value="Reenviar Pedido" name="enviarAlternativa" />
+                            <input type="button" value="Reenviar Pedido" name="reenviar" onclick="enviarDatos('mailto:pizzahut@gmail.com');" />
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <input type="hidden" name="oculto" value="http://www.toppizza.cat/es"/>
         </form>
     </body>
 </html>
